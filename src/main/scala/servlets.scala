@@ -24,15 +24,23 @@ class ServletInitialization extends ServletContextListener {
   override def contextDestroyed(event: ServletContextEvent) = {}
 }
 
-class Main extends App {
+object Main extends App {
   override def main(args: Array[String]): Unit = {
     val server = new Server(8080)
     val initialization = new ServletInitialization()
     val context = new WebAppContext()
+    context.setResourceBase("/")
     context.addEventListener(initialization)
     context.setServer(server)
     server.setHandler(context)
+
     server.start()
+    val console = System.console()
+    if (console != null) {
+      console.readLine("Press enter to exit")
+      server.stop()
+    }
+    server.join()
   }
 }
 
