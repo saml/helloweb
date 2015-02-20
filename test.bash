@@ -4,6 +4,7 @@ wrk="${WRK:-wrk}"
 node="${NODE:-node}"
 nim="${NIM:-nim}"
 sbt="${SBT:-sbt}"
+java="${JAVA:-java}"
 
 run() {
   local msg="$1"
@@ -24,10 +25,11 @@ echo "      $nim"
 echo "      $sbt"
 
 # build
-#"$nim" -d:release c hello
+"$nim" -d:release c hello
+"$sbt" assembly
 
-#run "Servlet" "$sbt" "container:start"
-#run "Node.js" "$node"  hello.js
-#run "Nim" ./hello
+run "Servlet" "$java" -jar "target/scala-2.11/hello-assembly-0.0.0.jar"
+run "Node.js" "$node"  hello.js
+run "Nim" ./hello
 
 
