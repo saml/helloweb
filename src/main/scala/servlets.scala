@@ -7,7 +7,7 @@ object Main extends App {
   override def main(args: Array[String]): Unit = {
     val handler = new HttpHandler {
       override def handleRequest(exchange: HttpServerExchange): Unit = {
-        exchange.getResponseSender().send("Helllo world")
+        exchange.getResponseSender().send("Hello world")
       }
     }
     val server = Undertow.builder()
