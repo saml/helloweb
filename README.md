@@ -17,15 +17,15 @@ Write simple web server that responds with `Hello, world`.
 $ WRK=~/code/wrk/wrk JAVA=~/opt/jdk1.7.0_04/bin/java  ./test.bash
 ...
 
-==== Servlet (9737)
+==== Java (29069)
 Running 10s test @ http://localhost:8080/
   10 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     4.69ms   18.26ms 198.87ms   95.91%
-    Req/Sec     7.72k     4.17k   46.22k    67.57%
-  697550 requests in 10.00s, 79.16MB read
-Requests/sec:  69777.78
-Transfer/sec:      7.92MB
+    Latency   303.78us    1.03ms  24.22ms   97.52%
+    Req/Sec    38.31k    12.32k  205.67k    80.76%
+  3354281 requests in 10.00s, 358.28MB read
+Requests/sec: 335498.02
+Transfer/sec:     35.84MB
 node hello.js
 Server running at http://localhost:8080/
 Server running at http://localhost:8080/
@@ -33,38 +33,38 @@ Server running at http://localhost:8080/
 Server running at http://localhost:8080/
 Server running at http://localhost:8080/
 Server running at http://localhost:8080/
-==== Node.js (9879)
+==== Node.js (29113)
 Running 10s test @ http://localhost:8080/
   10 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.36ms  763.54us  27.11ms   97.55%
-    Req/Sec     7.84k     1.55k   15.56k    83.16%
-  737573 requests in 10.00s, 90.74MB read
-Requests/sec:  73776.52
-Transfer/sec:      9.08MB
+    Latency     1.34ms  675.53us  14.29ms   78.32%
+    Req/Sec     8.49k     3.09k   23.89k    60.85%
+  798207 requests in 10.00s, 98.20MB read
+Requests/sec:  79856.80
+Transfer/sec:      9.82MB
 ./hello
 Check http://localhost:8080
-==== Nim (9909)
+==== Nim (29142)
 Running 10s test @ http://localhost:8080/
   10 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.70ms  800.15us   4.84ms   45.50%
-    Req/Sec     3.91k   280.81     4.60k    67.03%
-  368439 requests in 10.00s, 17.57MB read
-Requests/sec:  36850.89
-Transfer/sec:      1.76MB
-./test.bash: line 13:  9909 Terminated              "$@"
+    Latency     2.73ms  806.02us   3.72ms   45.16%
+    Req/Sec     3.88k   301.04     4.50k    65.50%
+  364799 requests in 10.00s, 17.39MB read
+Requests/sec:  36482.06
+Transfer/sec:      1.74MB
+./test.bash: line 13: 29142 Terminated              "$@"
 ./hello_go
 http://localhost:8080
-==== Go (9924)
+==== Go (29163)
 Running 10s test @ http://localhost:8080/
   10 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.40ms    5.73ms  74.24ms   95.70%
-    Req/Sec    15.67k     7.68k   85.00k    66.75%
-  1477890 requests in 9.99s, 181.82MB read
-Requests/sec: 147866.78
-Transfer/sec:     18.19MB
+    Latency     1.38ms    6.24ms  80.28ms   96.57%
+    Req/Sec    15.59k     7.34k   90.89k    68.24%
+  1472227 requests in 10.00s, 181.12MB read
+Requests/sec: 147271.05
+Transfer/sec:     18.12MB
 
 
 ```
