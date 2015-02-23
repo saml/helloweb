@@ -7,7 +7,7 @@ version := "0.0.0"
 scalaVersion := "2.11.4"
 
 libraryDependencies ++= Seq(
-  "io.undertow" % "undertow-core" % "1.2.0.Beta8"
+  "io.netty" % "netty-all" % "5.0.0.Alpha1"
 )
 
 
