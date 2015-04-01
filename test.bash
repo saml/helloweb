@@ -21,6 +21,7 @@ run() {
   echo "==== $msg ($pid)"
   "$wrk" -c 100 -d $duration -t 10 "http://localhost:8080/"
   kill "$pid"
+  echo "==== end ===="
   sleep 3
 }
 

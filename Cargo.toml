@@ -7,3 +7,7 @@ authors = ["saml"]
 [[bin]]
 
 name = "hello"
+
+[dependencies]
+
+mio = "0.3.0"
