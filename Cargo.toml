@@ -10,4 +10,4 @@ name = "hello"
 
 [dependencies]
 
-mio = "0.3.0"
+hyper = "0.3.7"
