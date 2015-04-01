@@ -6,8 +6,9 @@ use std::io::Write;
 const RESPONSE: &'static str = concat!(
     "HTTP/1.1 200 OK\r\n",
     "Content-Type: text/plain; charset=UTF-8\r\n",
+    "Content-Length: 11\r\n",
     "\r\n", 
-    "Hello world!\r\n");
+    "Hello world");
 
 const SERVER: mio::Token = mio::Token(0);
 
