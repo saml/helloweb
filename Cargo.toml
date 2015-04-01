@@ -1,0 +1,9 @@
+[package]
+
+name = "hello world"
+version = "0.0.0"
+authors = ["saml"]
+
+[[bin]]
+
+name = "hello"

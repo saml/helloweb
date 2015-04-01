@@ -6,6 +6,7 @@ nim="${NIM:-nim}"
 sbt="${SBT:-sbt}"
 java="${JAVA:-java}"
 go="${GO:-go}"
+cargo="${CARGO:-cargo}"
 
 duration="${1:-10}"
 should_build="${2:-yes}"
@@ -34,8 +35,10 @@ then
   "$nim" -d:release c hello
   "$sbt" assembly
   "$go" build -o hello_go hello.go
+  "$cargo" build --release
 fi
 
+run "Rust" "./target/release/hello"
 run "Java" "$java" -jar "target/scala-2.11/hello-assembly-0.0.0.jar"
 run "Node.js" "$node"  hello.js
 run "Nim" ./hello
