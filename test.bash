@@ -7,6 +7,7 @@ sbt="${SBT:-sbt}"
 java="${JAVA:-java}"
 go="${GO:-go}"
 cargo="${CARGO:-cargo}"
+valac="${VALAC:-valac}"
 
 duration="${1:-10}"
 should_build="${2:-yes}"
@@ -37,6 +38,7 @@ then
   "$sbt" assembly
   "$go" build -o hello_go hello.go
   "$cargo" build --release
+  "$valac" --pkg gio-2.0 hello.vala -o hello_vala
 fi
 
 run "Rust" "./target/release/hello"
@@ -44,5 +46,5 @@ run "Java" "$java" -jar "target/scala-2.11/hello-assembly-0.0.0.jar"
 run "Node.js" "$node"  hello.js
 run "Nim" ./hello
 run "Go" ./hello_go
-
+run "Vala" ./hello_vala
 

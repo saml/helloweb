@@ -6,3 +6,5 @@ target/
 logs/
 hello
 hello_go
+hello_vala
+Cargo.lock
