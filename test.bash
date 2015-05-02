@@ -34,7 +34,7 @@ echo "      $sbt"
 if [[ "$should_build" = "yes" ]]
 then
   # build
-  "$nim" -d:release c hello
+  "$nim" -d:release --gc:markandsweep -o:hello_nim c hello
   "$sbt" assembly
   "$go" build -o hello_go hello.go
   "$cargo" build --release
@@ -44,7 +44,7 @@ fi
 run "Rust" "./target/release/hello"
 run "Java" "$java" -jar "target/scala-2.11/hello-assembly-0.0.0.jar"
 run "Node.js" "$node"  hello.js
-run "Nim" ./hello
+run "Nim" ./hello_nim
 run "Go" ./hello_go
 run "Vala" ./hello_vala
 
